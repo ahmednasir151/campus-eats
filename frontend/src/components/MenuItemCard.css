@@ -1,0 +1,146 @@
+.menu-item-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.menu-item-image {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.veg-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.menu-item-info {
+  padding: 15px;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.menu-item-header h4 {
+  font-size: 18px;
+  color: #333;
+}
+
+.menu-item-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.menu-item-description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.menu-item-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.category {
+  background-color: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: #666;
+  text-transform: capitalize;
+}
+
+.spicy {
+  font-size: 14px;
+}
+
+.menu-item-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.quantity-selector button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #667eea;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-selector span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ee5a52;
+}
+
+.add-to-cart-btn.added {
+  background-color: #27ae60;
+}
+
+.unavailable {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 10px 0;
+}

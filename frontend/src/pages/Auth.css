@@ -1,0 +1,419 @@
+/* Auth.css - Light Theme Modern Advanced Layout */
+
+.auth-page {
+  background-color: var(--bg-tertiary, #f1f5f9);
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+.auth-split-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 700px;
+  background: var(--bg-primary, #ffffff);
+  border-radius: var(--radius-xl, 30px);
+  box-shadow: var(--shadow-xl, 0 25px 50px -12px rgba(0, 0, 0, 0.1));
+  overflow: hidden;
+  position: relative;
+}
+
+/* Left Side Illustration / Image */
+.auth-visual {
+  flex: 1;
+  position: relative;
+  display: none; /* Hidden on mobile */
+  background: var(--bg-secondary, #f8fafc);
+  overflow: hidden;
+}
+
+.auth-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+}
+
+.auth-visual-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem;
+  z-index: 2;
+  color: white;
+}
+
+.auth-visual-content.align-bottom {
+  padding-bottom: 5rem;
+}
+
+.auth-visual-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  line-height: 1.1;
+}
+
+.auth-visual-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* Right Side Form */
+.auth-form-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: var(--bg-primary, #ffffff);
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 440px;
+}
+
+.scrollable-form {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 15px; /* custom scrollbar padding */
+}
+
+.scrollable-form::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-form::-webkit-scrollbar-thumb {
+  background-color: var(--border-color, #e2e8f0);
+  border-radius: 10px;
+}
+
+.auth-header {
+  margin-bottom: 2.5rem;
+}
+
+.auth-emoji {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate( 0.0deg) }
+  10% { transform: rotate(14.0deg) }
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate( 10.0deg) }
+  60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
+}
+
+.auth-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtitle {
+  color: var(--text-secondary, #475569);
+  font-size: 1rem;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: var(--radius-md, 12px);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.error-message svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Floating Label Form Styles */
+.modern-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group-floating {
+  position: relative;
+  width: 100%;
+}
+
+.form-group-floating.half {
+  flex: 1;
+}
+
+.form-group-floating input {
+  width: 100%;
+  padding: 1.25rem 1rem 0.5rem;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-primary, #0f172a);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-group-floating label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-tertiary, #94a3b8);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Float label to top when focused or has value */
+.form-group-floating input:focus,
+.form-group-floating input:not(:placeholder-shown) {
+  border-color: var(--accent-primary, #ff6b6b);
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.1);
+}
+
+.form-group-floating input:focus + label,
+.form-group-floating input:not(:placeholder-shown) + label {
+  top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent-primary, #ff6b6b);
+  font-weight: 600;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+}
+
+.forgot-password a {
+  color: var(--accent-primary, #ff6b6b);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-auth-primary {
+  background: var(--text-primary, #0f172a);
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius-md, 12px);
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
+}
+
+.btn-auth-primary:hover {
+  transform: translateY(-2px);
+  background: var(--accent-primary, #ff6b6b);
+  box-shadow: 0 10px 20px -3px rgba(255, 107, 107, 0.3);
+}
+
+.btn-auth-primary:disabled {
+  background: var(--text-tertiary, #94a3b8);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-bottom-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.auth-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--text-secondary, #475569);
+  font-size: 0.95rem;
+}
+
+.auth-link-bold {
+  color: var(--text-primary, #0f172a);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.auth-link-bold:hover {
+  border-bottom-color: var(--text-primary, #0f172a);
+}
+
+/* Custom Role Selector for Register */
+.form-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-tertiary, #94a3b8);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1rem 0;
+}
+
+.form-divider::before, .form-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.form-divider::before { margin-right: 1rem; }
+.form-divider::after { margin-left: 1rem; }
+
+.role-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.role-card {
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-md, 12px);
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.hidden-radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.role-card:hover {
+  border-color: #cbd5e1;
+  background: var(--bg-secondary, #f8fafc);
+}
+
+.role-card.active {
+  border-color: var(--accent-primary, #ff6b6b);
+  background: rgba(255, 107, 107, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(255, 107, 107, 0.1);
+}
+
+.role-icon {
+  font-size: 2rem;
+}
+
+.role-text {
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+}
+
+.student-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 900px) {
+  .auth-visual {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .auth-split-container {
+    max-width: 500px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+  
+  .auth-form-side {
+    padding: 2rem 1.5rem;
+  }
+  
+  .auth-split-container {
+    border-radius: var(--radius-lg, 20px);
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

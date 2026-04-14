@@ -1,0 +1,159 @@
+.restaurant-card-modern {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary, #ffffff);
+  border-radius: var(--radius-lg, 20px);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-color, #e2e8f0);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+}
+
+.restaurant-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl, 0 25px 50px -12px rgba(0, 0, 0, 0.1));
+  border-color: #cbd5e1;
+}
+
+/* Image Container */
+.rc-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.rc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.restaurant-card-modern:hover .rc-image {
+  transform: scale(1.05);
+}
+
+/* Badges */
+.rc-badges-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.rc-badges-bottom {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.rc-badge {
+  padding: 6px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rc-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.rc-badge.closed {
+  background: #fef2f2;
+  color: #ef4444;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.rc-badge.featured {
+  background: var(--text-primary, #0f172a);
+  color: #fbbf24;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.rc-badge.frosted {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary, #0f172a);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Card Info */
+.rc-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.rc-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #0f172a);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.rc-cuisine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 1.5rem 0;
+}
+
+.cuisine-tag {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #475569);
+  background: var(--bg-secondary, #f8fafc);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.rc-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  font-size: 0.85rem;
+  color: var(--text-tertiary, #94a3b8);
+  font-weight: 500;
+}
+
+.rc-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rc-location svg {
+  width: 14px;
+  height: 14px;
+}
+
+.rc-min-order {
+  color: var(--text-secondary, #475569);
+  background: var(--bg-tertiary, #f1f5f9);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
